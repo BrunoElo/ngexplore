@@ -1,0 +1,9 @@
+<div class="user-container">
+    <div class="user-wrapper" *ngFor="let user of users">
+        <a [routerLink]="user.id">
+            <h3>username: {{user.username}}</h3>
+            <p>Email: {{user.email}}</p>
+            <h5>website: {{user.website}}</h5>
+        </a>
+    </div>
+</div>
