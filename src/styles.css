@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.user-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-wrapper {
+  border-radius: 4px;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1%;
+  margin: 10px;
+  cursor: pointer;
+  width: 255px;
+}
+
+.user-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}

@@ -1,0 +1,11 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 16px;
+  margin: 10px;
+}

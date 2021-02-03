@@ -16,7 +16,15 @@ export class ApiService {
     return this.http.get(`${environment.apiUrl}users/${id}`);
   }
 
-  post(payload: any) {
-    return this.http.post(`${environment.apiUrl}posts`, payload);
+  getUserPost(id: number) {
+    return this.http.get(`${environment.apiUrl}users/${id}/posts`);
+  }
+
+  post(id: number, payload: any) {
+    return this.http.post(`${environment.apiUrl}users/${id}/posts`, payload, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 }

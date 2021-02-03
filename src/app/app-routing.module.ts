@@ -4,7 +4,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  { path: '', component: UsersComponent },
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: UserProfileComponent },
 ];

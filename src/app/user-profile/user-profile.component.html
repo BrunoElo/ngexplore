@@ -1,3 +1,4 @@
+<h2>User Info</h2>
 <div class="user-container">
     <div class="user-wrapper">
         <h3>Name: {{userData.name}}</h3>
@@ -5,4 +6,36 @@
         <p>Email: {{userData.email}}</p>
         <h5>website: {{userData.website}}</h5>
     </div>
+</div>
+<div>
+    <h2>User Posts</h2>
+    <div class="user-container">
+        <div class="user-wrapper" *ngFor="let post of userPosts">
+            <p>Title: {{post.title}}</p>
+            <p>body:{{post.body}}</p>
+        </div>
+    </div>
+</div>
+<div class="form-wrapper">
+    <h2>Make a post</h2>
+    <form (ngSubmit)=submitPost(postsForm) [formGroup]="postsForm">
+        <div>
+            <label>Title</label><br>
+            <input class="form-control" formControlName="title">
+        </div>
+        <div>
+            <label>Body</label><br>
+            <textarea class="form-control" formControlName="body"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        <div *ngIf="warning">
+            <p>Please complete all fields</p>
+        </div>
+        <div *ngIf="response">
+            <h4>Logged successful response</h4>
+            <p>Title: {{response?.title}}</p>
+            <p>Body: {{response?.body}}</p>
+            <p>id: {{response?.id}}</p>
+        </div>
+    </form>
 </div>
