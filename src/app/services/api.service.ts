@@ -27,4 +27,8 @@ export class ApiService {
       },
     });
   }
+
+  getApiHome() {
+    return this.http.get('https://user-login-reg-auth.herokuapp.com');
+  }
 }

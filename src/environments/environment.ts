@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'https://jsonplaceholder.typicode.com/',
+  authUrl: 'https://user-login-reg-auth.herokuapp.com/api',
 };
 
 /*

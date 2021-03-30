@@ -1,0 +1,6 @@
+<header *ngIf="loggedIn()">
+    <p>{{user.name}} is logged in</p>
+    <div>
+        <button (click)="logout()">Logout</button>
+    </div>
+</header>
