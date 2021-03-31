@@ -1,5 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-header',
@@ -11,31 +12,32 @@ export class HeaderComponent implements OnInit {
   user: any;
   constructor(
     private authService: AuthService,
-    private ref: ChangeDetectorRef
-  ) {
-    setTimeout(() => {
-      this.ref.detectChanges();
-    }, 2000);
-  }
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    this.getUser(this.authService.getToken());
+    //this.getUser(this.authService.getToken());
+    /* didn't survive a reload
+     this.dataService.currentUser$.subscribe((data) => {
+      this.user = data;
+    }); */
   }
 
   loggedIn() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+
     return this.authService.isLoggedIn();
   }
 
-  getUser(token: string) {
+  /* getUser(token: string) {
     try {
       this.user = JSON.parse(atob(token.split('.')[1]));
       //this.username = user.name;
       console.log(this.user.name);
-      this.ref.detectChanges();
     } catch (error) {
       return null;
     }
-  }
+  } */
 
   logout() {
     this.authService.logout();
